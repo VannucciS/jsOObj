@@ -44,9 +44,9 @@ class ContaBancaria {
  
 }
 
-class ContaCorrente {
+class ContaCorrente extends ContaBancaria{
     constructor(agencia, numero, saldo, cartaoCredito){
-        Super(agencia, numero, saldo);
+        super(agencia, numero, saldo);
         this._cartaoCredito = cartaoCredito;
         this.tipo = 'conta corrente';
     }
@@ -62,15 +62,15 @@ class ContaCorrente {
     }
 }
 
-class ContaPoupanca {
-    constructor(agencia, numero, saldo){
-        Super(agencia, numero, saldo);
+class ContaPoupanca extends ContaBancaria{
+    constructor(agencia, numero){
+        super(agencia, numero);
         this.tipo = 'conta poupança';
     }
 }
-class ContaUniversitaria {
-    constructor(agencia, numero, saldo){
-        Super(agencia, numero, saldo);
+class ContaUniversitaria extends ContaBancaria{
+    constructor(agencia, numero){
+        super(agencia, numero);
         this.tipo = 'conta universitária';
     }
     sacar (valor) {       
@@ -86,6 +86,6 @@ class ContaUniversitaria {
 }
 
 
-var conta1 = new ContaBancaria(1,123,'Especial', 100)
+//var conta1 = new ContaBancaria(1,123,'Especial', 100)
 
-console.log(conta1)
+//console.log(conta1)
